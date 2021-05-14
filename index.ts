@@ -27,7 +27,7 @@ class Piso {
 //que reciba un Departamento y lo ubique en el piso con el nombre indicado,
 //si no existe un piso con ese nombre debe mostrar un error.
 class Edificio {
-  pisos: string[] = [];
+  pisos: Piso[] = [];
   constructor(nombreDelPiso: any) {
     this.pisos = nombreDelPiso;
   }
@@ -39,7 +39,7 @@ class Edificio {
         return console.log("El piso no existe");
       }
     });
-    return Piso[pisoIndicado].departamentos.push(departamento);
+    return pisoIndicado.departamentos.push(departamento);
   }
   //un método getDepartamentosByPiso(nombreDePiso:string) que devuelva todos los Departamento(s) de un piso.
   getDepartamentosByPiso(nombreDePiso: string) {
@@ -48,7 +48,7 @@ class Edificio {
         return item;
       }
     });
-    return Piso[pisoCorrecto].departamentos;
+    return pisoCorrecto.departamentos;
   }
 }
 
